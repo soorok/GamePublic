@@ -201,7 +201,9 @@ function update(time = 0) {
 }
 
 function updateScore() {
-    document.getElementById('score').innerText = player.score;
+    // 여기에서 score 요소를 찾아 업데이트합니다.
+    // document.getElementById('score').innerText = player.score;
+    console.log('Score: ', player.score);
 }
 
 const colors = [
