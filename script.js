@@ -227,7 +227,7 @@ const colors = [
     '#3877FF',
 ];
 
-const arena = createMatrix(12, 20);
+const arena = createMatrix(16, 32);
 
 const player = {
     pos: {x: 0, y: 0},
@@ -244,10 +244,6 @@ document.addEventListener('keydown', event => {
         playerDrop();
     } else if (event.keyCode === 32) {
         playerRotate(1); // 스페이스바를 누르면 90도 회전
-    } else if (event.keyCode === 81) {
-        playerRotate(-1);
-    } else if (event.keyCode === 87) {
-        playerRotate(1);
     }
 });
 
