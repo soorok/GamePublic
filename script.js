@@ -147,6 +147,18 @@ function playerDrop() {
     dropCounter = 0;
 }
 
+function playerHardDrop() {
+    while (!collide(arena, player)) {
+        player.pos.y++;
+    }
+    player.pos.y--;
+    merge(arena, player);
+    playerReset();
+    arenaSweep();
+    updateScore();
+    dropCounter = 0;
+}
+
 function playerMove(dir) {
     player.pos.x += dir;
     if (collide(arena, player)) {
@@ -201,7 +213,7 @@ function update(time = 0) {
 }
 
 function updateScore() {
-    document.getElementById('score').innerText = 'Score: ' + player.score;
+    document.getElementById('score').innerText = '점수: ' + player.score;
 }
 
 const colors = [
@@ -230,6 +242,8 @@ document.addEventListener('keydown', event => {
         playerMove(1);
     } else if (event.keyCode === 40) {
         playerDrop();
+    } else if (event.keyCode === 32) {
+        playerHardDrop();
     } else if (event.keyCode === 81) {
         playerRotate(-1);
     } else if (event.keyCode === 87) {
