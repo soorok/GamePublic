@@ -243,7 +243,7 @@ document.addEventListener('keydown', event => {
     } else if (event.keyCode === 40) {
         playerDrop();
     } else if (event.keyCode === 32) {
-        playerHardDrop();
+        playerRotate(1); // 스페이스바를 누르면 90도 회전
     } else if (event.keyCode === 81) {
         playerRotate(-1);
     } else if (event.keyCode === 87) {
